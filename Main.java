@@ -13,12 +13,8 @@ public class Main {
             String line = br.readLine();
             while (line != null) {
                 String[] words = line.split(" ");
-                for(String str : words) {
-                    //if (str.matches("[\\w]*[\\W]*[\\w]*")) {
-                       //System.out.println(str);
-                        counter++;
-                    //}
-                }    
+                for(String str : words) 
+                    counter += str.matches("[\\W]*") ? 0 : 1;
                 line = br.readLine();
             }
             System.out.printf("The file contains %d words!\n", counter);
